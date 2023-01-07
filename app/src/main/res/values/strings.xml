@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Form</string>
+    <string name="f_name_hint">First Name</string>
+    <string name="l_name_hint">Last Name</string>
+    <string name="select_date">Select Date</string>
+    <string name="id_hint">1234</string>
+    <string name="text_hint">Enter Full Name</string>
+    <string name="text_hint2">Enter your school ID number</string>
+    <string name="text_hint3">Select your Department</string>
+    <string name="text_hint4">Select a date</string>
+    <string name="next_btn">Next</string>
+    <array name="course">
+        <item>Accounting</item>
+        <item>Computer Science</item>
+        <item>Management</item>
+        <item>Marketing</item>
+    </array>
+
+</resources>
