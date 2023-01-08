@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -16,12 +18,16 @@ import com.themoonk1d.form.databinding.ActivityMainBinding;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-ActivityMainBinding binding;
+    ActivityMainBinding binding;
     private DatePicker datePicker;
     private Calendar calendar;
     private TextView dateView;
-    private int year, month, day;
-    public String pickedDate;
+    private int year;
+    private int month;
+    private int day;
+    private String pickedDate, fName, lName, department, id;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,8 @@ ActivityMainBinding binding;
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month+1, day);
 
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.bk)));
+
         binding.selectDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,8 +53,31 @@ ActivityMainBinding binding;
         binding.nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),SecondPage.class);
-                startActivity(intent);
+               // binding.
+               fName = String.valueOf(binding.fName.getText());
+               lName = String.valueOf(binding.lName.getText());
+               id = String.valueOf(binding.id.getText());
+                if (fName.isEmpty() && lName.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Enter Full name first", Toast.LENGTH_SHORT).show();
+                }else if (fName.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Enter First name", Toast.LENGTH_SHORT).show();
+                }else if (lName.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Enter Last name", Toast.LENGTH_SHORT).show();
+                }else if (id.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Enter ID", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (binding.textView5.getText().equals("Select a date")){
+                        Toast.makeText(getApplicationContext(), "Today's date has been chosen", Toast.LENGTH_SHORT).show();
+                    }
+                    Intent intent = new Intent(getApplicationContext(), SecondPage.class);
+                    intent.putExtra("FullName", fName + " " + lName);
+                    intent.putExtra("Id", id);
+                    intent.putExtra("Date", pickedDate);
+                    startActivity(intent);
+                }
+
+
             }
         });
     }
