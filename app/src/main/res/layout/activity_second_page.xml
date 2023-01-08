@@ -16,26 +16,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/pro_content_desc" />
 
     <TextView
         android:id="@+id/fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Full Name"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_snd" />
 
   <androidx.cardview.widget.CardView
-      android:layout_width="300dp"
+      android:layout_width="350dp"
       android:layout_height="100dp"
       android:layout_marginTop="16dp"
       android:layout_margin="20dp"
       app:cardCornerRadius="10dp"
-      android:elevation="5dp"
+      android:elevation="10dp"
+
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
@@ -49,14 +51,13 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:padding="10dp"
-       android:text="Students ID:">
+       android:text="@string/stud_id">
 
      </TextView>
      <TextView
          android:id="@+id/studId"
          android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="...">
+         android:layout_height="wrap_content">
 
      </TextView>
    </LinearLayout>
@@ -69,14 +70,13 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:padding="10dp"
-          android:text="Students Department:">
+          android:text="@string/stud_dep">
 
       </TextView>
       <TextView
           android:id="@+id/studDep"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="...">
+          android:layout_height="wrap_content">
 
       </TextView>
     </LinearLayout>
@@ -89,14 +89,13 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:padding="10dp"
-          android:text="Student joined on:">
+          android:text="@string/stud_date">
 
       </TextView>
       <TextView
           android:id="@+id/date"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="...">
+          android:layout_height="wrap_content">
 
       </TextView>
     </LinearLayout>

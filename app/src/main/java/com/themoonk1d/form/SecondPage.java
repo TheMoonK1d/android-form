@@ -25,10 +25,12 @@ public class SecondPage extends AppCompatActivity {
         String FullName = intent.getStringExtra("FullName");
         String Id = intent.getStringExtra("Id");
         String Date = intent.getStringExtra("Date");
+        String Dep = intent.getStringExtra("Dep");
 
         binding.fullname.setText(FullName);
         binding.studId.setText(Id);
         binding.date.setText(Date);
+        binding.studDep.setText(Dep);
 
     }
 }

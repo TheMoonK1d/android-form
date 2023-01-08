@@ -9,7 +9,18 @@
     <string name="text_hint3">Select your Department</string>
     <string name="text_hint4">Select a date</string>
     <string name="next_btn">Next</string>
+    <string name="lang_amh">Amharic</string>
+    <string name="lang_eng">English</string>
+    <string name="stud_id">Student ID:</string>
+    <string name="stud_dep">Student Department:</string>
+    <string name="stud_date">Student Joined on:</string>
+    <string name="pro_content_desc">User Profile picture</string>
+    <string name="cam_content_desc">Take a picture with camera</string>
+    <string name="gal_content_desc">Select a picture from gallery</string>
+    <string name="dep_not">Department not selected yet</string>
+<!--    <String name="dep_not">Student has not yet choose a department</String>-->
     <array name="course">
+        <item>Select department</item>
         <item>Accounting</item>
         <item>Computer Science</item>
         <item>Management</item>
