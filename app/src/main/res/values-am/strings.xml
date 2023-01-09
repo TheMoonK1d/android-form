@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Form</string>
+    <string name="f_name_hint">የመጀመሪያ ስም</string>
+    <string name="l_name_hint">ያባት ስም</string>
+    <string name="select_date">ቀን ይምረጡ</string>
+    <string name="id_hint">1234</string>
+    <string name="text_hint">ሙሉ ስም አስገባ</string>
+    <string name="text_hint2">የትምህርት ቤት መታወቂያ ቁጥርዎን ያስገቡ</string>
+    <string name="text_hint3">የእርስዎን ክፍል ይምረጡ</string>
+    <string name="text_hint4">ቀን ይምረጡ</string>
+    <string name="next_btn">ቀጥሎ</string>
+    <string name="lang_amh">አማርኛ</string>
+    <string name="lang_eng">እንግሊዝኛ</string>
+    <string name="stud_id">የተማሪ መታወቂያ:</string>
+    <string name="stud_dep">የተማሪ ክፍል:</string>
+    <string name="stud_date">ተማሪው የገባበት ቀን:</string>
+    <string name="pro_content_desc">User Profile picture</string>
+    <string name="cam_content_desc">Take a picture with camera</string>
+    <string name="gal_content_desc">Select a picture from gallery</string>
+    <string name="date_picked">ቀን ተመርጧል </string>
+    <string name="change_date">ቀን ለውጥ</string>
+    <string name="dep_not">ክፍል እስካሁን አልተመረጠም።</string>
+    <array name="course">
+        <item>ክፍል ይምረጡ</item>
+        <item>ሂሳብ አያያዝ</item>
+        <item>ኮምፒውተር ሳይንስ</item>
+        <item>አስተዳደር</item>
+        <item>ግብይት</item>
+    </array>
+    <string name="full_name_toast">መጀመሪያ ሙሉ ስም አስገባ</string>
+    <string name="f_name_toast">የመጀመሪያ ስም አስገባ</string>
+    <string name="lname_toast">የአያት ስም አስገባ</string>
+    <string name="id_toast">መታወቂያ አስገባ</string>
+    <string name="today_toast">የዛሬው ቀን ተመርጧል</string>
+</resources>

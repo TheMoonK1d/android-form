@@ -9,13 +9,15 @@ import android.view.View;
 
 import com.themoonk1d.form.databinding.ActivitySecondPageBinding;
 
+import java.util.Objects;
+
 public class SecondPage extends AppCompatActivity {
     ActivitySecondPageBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_second_page);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.bk)));
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.bk)));
         setTitle("Student Info");
         binding = ActivitySecondPageBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();

@@ -1,5 +1,6 @@
 package com.themoonk1d.form;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -27,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private int updatedYear;
     private String pickedDate, fName, lName, department, id;
 
-
-
+    Language language = new Language(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
         String[] stringArray = getResources().getStringArray(R.array.course);
 
         Calendar calendar = Calendar.getInstance();
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.selectDateBtn.setOnClickListener(view12 -> {
             showDialog(0);
-            Toast.makeText(getApplicationContext(), "Select a date", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), getResources().getText(R.string.text_hint4), Toast.LENGTH_SHORT).show();
         });
         binding.nextBtn.setOnClickListener(view1 -> {
            department= binding.spinner.getSelectedItem().toString();
@@ -60,17 +62,17 @@ public class MainActivity extends AppCompatActivity {
            lName = String.valueOf(binding.lName.getText());
            id = String.valueOf(binding.id.getText());
             if (fName.isEmpty() && lName.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Enter Full name first", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getText(R.string.full_name_toast), Toast.LENGTH_SHORT).show();
             }else if (fName.isEmpty()){
-                Toast.makeText(getApplicationContext(), "Enter First name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getText(R.string.f_name_toast), Toast.LENGTH_SHORT).show();
             }else if (lName.isEmpty()){
-                Toast.makeText(getApplicationContext(), "Enter Last name", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getText(R.string.lname_toast), Toast.LENGTH_SHORT).show();
             }else if (id.isEmpty()){
-                Toast.makeText(getApplicationContext(), "Enter ID", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getText(R.string.id_toast), Toast.LENGTH_SHORT).show();
             }
             else {
                 if (binding.textView5.getText().equals("Select a date")){
-                    Toast.makeText(getApplicationContext(), "Today's date has been chosen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getResources().getText(R.string.today_toast), Toast.LENGTH_SHORT).show();
                 }
                 switch (department) {
                     case "Accounting":
@@ -99,6 +101,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.lang_amh:
+                Toast.makeText(this, "Please wait...Changing language to Amharic", Toast.LENGTH_SHORT).show();
+                language .changeRes("am");
+                recreate();
+                return true;
+            case R.id.lang_eng:
+                Toast.makeText(this, "እባክህ ጠብቅ...ቋንቋ ወደ እንግሊዝኛ በመቀየር ላይ ነው", Toast.LENGTH_SHORT).show();
+                language .changeRes("en");
+                recreate();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -120,9 +142,9 @@ public class MainActivity extends AppCompatActivity {
                 public void onDateSet(DatePicker arg0, int arg1, int arg2, int arg3) {
                     showDate(arg1, arg2+1, arg3);
 
-                    binding.textView5.setText("Date Picked "+pickedDate);
-                    Toast.makeText(getApplicationContext(), pickedDate + " picked", Toast.LENGTH_SHORT).show();
-                    binding.selectDateBtn.setText("CHANGE DATE");
+                    binding.textView5.setText(getResources().getText(R.string.date_picked, pickedDate));
+                    Toast.makeText(getApplicationContext(), pickedDate, Toast.LENGTH_SHORT).show();
+                    binding.selectDateBtn.setText(getResources().getText(R.string.change_date));
                 }
             };
     private void showDate(int year, int month, int day) {

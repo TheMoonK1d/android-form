@@ -17,8 +17,9 @@
     <string name="pro_content_desc">User Profile picture</string>
     <string name="cam_content_desc">Take a picture with camera</string>
     <string name="gal_content_desc">Select a picture from gallery</string>
+    <string name="date_picked">Date Picked </string>
+    <string name="change_date">CHANGE DATE</string>
     <string name="dep_not">Department not selected yet</string>
-<!--    <String name="dep_not">Student has not yet choose a department</String>-->
     <array name="course">
         <item>Select department</item>
         <item>Accounting</item>
@@ -26,5 +27,11 @@
         <item>Management</item>
         <item>Marketing</item>
     </array>
+    <string name="full_name_toast">Enter Full name first</string>
+    <string name="f_name_toast">Enter First name</string>
+    <string name="lname_toast">Enter Last name</string>
+    <string name="id_toast">Enter ID</string>
+    <string name="today_toast">Today\'s date has been chosen</string>
+
 
 </resources>

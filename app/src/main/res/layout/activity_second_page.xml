@@ -11,13 +11,13 @@
         android:id="@+id/img_snd"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/pro_content_desc"
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/pro_content_desc" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fullname"
@@ -30,75 +30,89 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_snd" />
 
-  <androidx.cardview.widget.CardView
-      android:layout_width="350dp"
-      android:layout_height="100dp"
-      android:layout_marginTop="16dp"
-      android:layout_margin="20dp"
-      app:cardCornerRadius="10dp"
-      android:elevation="10dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/bk_dark"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullname">
 
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.497"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/fullname" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="horizontal">
-     <TextView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:padding="10dp"
-       android:text="@string/stud_id">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/stud_id"
+                android:textColor="@color/white">
 
-     </TextView>
-     <TextView
-         android:id="@+id/studId"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content">
+            </TextView>
 
-     </TextView>
-   </LinearLayout>
-    <LinearLayout
-        android:paddingTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="10dp"
-          android:text="@string/stud_dep">
+            <TextView
+                android:id="@+id/studId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white">
 
-      </TextView>
-      <TextView
-          android:id="@+id/studDep"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
 
-      </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:paddingTop="60dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:padding="10dp"
-          android:text="@string/stud_date">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="30dp">
 
-      </TextView>
-      <TextView
-          android:id="@+id/date"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/stud_dep"
+                android:textColor="@color/white">
 
-      </TextView>
-    </LinearLayout>
-  </androidx.cardview.widget.CardView>
+            </TextView>
+
+            <TextView
+                android:id="@+id/studDep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="60dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/stud_date"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white">
+
+            </TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
